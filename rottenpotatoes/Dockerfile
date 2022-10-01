@@ -1,0 +1,16 @@
+FROM ruby:2.6.6-slim
+
+RUN apt-get update -qq && apt-get -y install build-essential nodejs sqlite3 libsqlite3-dev
+
+WORKDIR /usr/src/myapp
+
+COPY Gemfile* ./
+
+RUN gem install bundler:2.0.0.pre.3 && bundle install
+
+COPY ./ ./
+
+RUN rake db:migrate RAILS_ENV=test 
+
+CMD [ "bundle", "exec", "cucumber", "features/add_movie.feature" ]
+# CMD [ "/bin/sh", "-c", "sh" ]
