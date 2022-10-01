@@ -1,3 +1,11 @@
+**Important:** For running Cucumber tests, you could use the following commands respectively:
+
+```
+$ cd ./rottenpotatoes/
+$ docker build -t rails_cucumber:latest -f Dockerfile.test .
+$ docker run -it rails_cucumber:latest
+```
+
 BDD and Cucumber
 ================
 
