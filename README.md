@@ -1,4 +1,4 @@
-**Important:** For running Cucumber tests, you could use the following commands respectively:
+**Important:** if you want to run Cucumber tests, you could use the following commands respectively:
 
 ```
 $ cd ./rottenpotatoes/
