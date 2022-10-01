@@ -10,7 +10,8 @@ RUN gem install bundler:2.0.0.pre.3 && bundle install
 
 COPY ./ ./
 
-RUN rake db:migrate RAILS_ENV=test 
+RUN rake db:migrate RAILS_ENV=development
 
-CMD [ "bundle", "exec", "cucumber", "features/add_movie.feature" ]
-# CMD [ "/bin/sh", "-c", "sh" ]
+EXPOSE 3000
+
+CMD ["rails", "server", "-b", "0.0.0.0"]

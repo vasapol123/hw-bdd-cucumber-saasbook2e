@@ -14,6 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
+    when /^the (Create )?New\s?Movie\s?page$/ then '/movies/new'
     when /^the movies page$/ then '/movies'
 
     # Add more mappings here.

@@ -17,10 +17,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
-  gem 'rspec-rails'
+  # gem 'rspec-rails'
   gem 'pry'
   gem 'pry-byebug'
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
 end
 
