@@ -2,8 +2,8 @@
 
 ```
 $ cd ./rottenpotatoes/
-$ docker build -t rails_cucumber:latest -f Dockerfile.test .
-$ docker run -it rails_cucumber:latest
+$ docker-compose build
+$ docker-compose run --rm rails-cucumber bash
 ```
 
 BDD and Cucumber
