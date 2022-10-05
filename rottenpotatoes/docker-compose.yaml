@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  rails-cucumber:
+    build:
+      context: ${ABSOLUTE_PROJECT_PATH}
+      dockerfile: Dockerfile.test
+    container_name: rails-cucumber-testing
+    stdin_open: true
+    tty: true
+    volumes:
+      - '${ABSOLUTE_PROJECT_PATH}:/usr/src/myapp'
