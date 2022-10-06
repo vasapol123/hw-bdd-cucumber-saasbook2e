@@ -10,3 +10,10 @@ services:
     tty: true
     volumes:
       - '${ABSOLUTE_PROJECT_PATH}:/usr/src/myapp'
+  rails-rottenpotatoes:
+    build:
+      context: ${ABSOLUTE_PROJECT_PATH}
+      dockerfile: Dockerfile.web
+    container_name: rails-rottenpotatoes-web
+    ports:
+      - 3000:3000
