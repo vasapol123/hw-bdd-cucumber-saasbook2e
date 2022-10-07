@@ -16,8 +16,9 @@ end
 #   on the same page
 
 def get_movie_contents table_index
-  contents = page.find(:xpath, %(.//table[@id="movies"]/tbody))
-    .all(:xpath, "//td[#{table_index}]").to_a.map { |el| yield(el) }.compact
+  within(:xpath, %(//table[@id="movies"]/tbody)) do
+    page.all(:xpath, "//td[#{table_index}]").to_a.map { |el| yield el }.compact
+  end
 end
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
@@ -25,7 +26,8 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  page.body is the entire content of the page as a string.
   begin
     # Check if e1 and e2 are dates.
-    DateTime.parse e1; DateTime.parse e2
+    DateTime.parse e1
+    DateTime.parse e2
 
     release_dates = get_movie_contents(3) { |el| DateTime.parse(el.text) }
     expect(release_dates.index(e1) < release_dates.index(e2)).to be true
