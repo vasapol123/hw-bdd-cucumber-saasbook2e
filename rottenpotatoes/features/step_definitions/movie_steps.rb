@@ -15,12 +15,6 @@ end
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 
-def get_movie_contents table_index
-  within(:xpath, %(//table[@id="movies"]/tbody)) do
-    page.all(:xpath, "//td[#{table_index}]").to_a.map { |el| yield el }.compact
-  end
-end
-
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
@@ -29,11 +23,15 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
     DateTime.parse e1
     DateTime.parse e2
 
-    release_dates = get_movie_contents(3) { |el| DateTime.parse(el.text) }
-    expect(release_dates.index(e1) < release_dates.index(e2)).to be true
+    within(:xpath, %(//table[@id="movies"]/tbody)) do
+      release_dates = page.all(:xpath, "//td[3]").to_a.map do 
+        |el| DateTime.parse(el.text)
+      end.compact
+      
+      expect(release_dates.index(e1) < release_dates.index(e2)).to be true
+    end
   rescue ArgumentError
-    titles = get_movie_contents(1) { |el| el.text }
-    expect(titles.index(e1) < titles.index(e2)).to be true
+    expect(page.body.index(e1) < page.body.index(e2)).to be true
   end
 end
 
