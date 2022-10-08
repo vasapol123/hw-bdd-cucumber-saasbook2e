@@ -58,6 +58,7 @@ class MoviesController < ApplicationController
   end
 
   def search_tmdb
+    puts Tmdb::Movie.find("batman").title
     movie = params[:search_terms]["title"]
     flash[:warning] = %('#{movie}' was not found in TMDb.)
     redirect_to movies_path

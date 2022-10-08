@@ -23,6 +23,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
+  gem 'themoviedb'
+  gem 'dotenv-rails'
 end
 
 # group :production do

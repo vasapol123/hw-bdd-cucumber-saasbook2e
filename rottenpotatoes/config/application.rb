@@ -11,6 +11,14 @@ require "rails/all"
 
 Bundler.require(:default, Rails.env)
 
+# config/application.rb
+Bundler.require(*Rails.groups)
+
+# Load dotenv only in development or test environment
+if ['development', 'test'].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
+end
+
 module Rottenpotatoes
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
