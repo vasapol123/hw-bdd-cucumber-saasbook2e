@@ -30,7 +30,7 @@
 %div
   %span Search TMDb for a movie
 
-  = form_tag search_tmdb_path, :method => :post do
+  = form_tag add_path, :method => :post do
 
     = label :search_terms, :title, 'Search Terms'
     = text_field :search_terms, 'title'
