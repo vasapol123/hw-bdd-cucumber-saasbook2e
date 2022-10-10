@@ -4,7 +4,7 @@
 ```
 $ cd ./rottenpotatoes/
 
-// For using Cucumber in test environment
+// For using Cucumber to run the features in test environment
 $ docker-compose run --rm rails-cucumber 
 
 // OR
