@@ -1,9 +1,16 @@
-**Important:** If you want to run Cucumber tests, you could use the following commands respectively:
+**Important:** You could use the following commands respectively to run your errends:
 
 
 ```
 $ cd ./rottenpotatoes/
-$ docker-compose run --rm rails-cucumber
+
+// For using Cucumber dependency in test environment
+$ docker-compose run --rm rails-cucumber 
+
+// OR
+
+// For starting Rails application in development environment on http://localhost:3000
+$ docker 
 ```
 
 BDD and Cucumber
