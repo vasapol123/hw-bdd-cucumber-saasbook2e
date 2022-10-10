@@ -3,7 +3,7 @@
 ```
 $ cd ./rottenpotatoes/
 $ docker-compose build
-$ docker-compose run --rm rails-cucumber bash
+$ bash execute_container.sh
 ```
 
 BDD and Cucumber
