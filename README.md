@@ -1,15 +1,15 @@
-**Important:** You could use the following commands respectively to run your errends:
+**Important:** You could use the following commands respectively to test the application or start the application on your browser:
 
 
 ```
 $ cd ./rottenpotatoes/
 
-// For using Cucumber dependency in test environment
+// For using Cucumber in test environment
 $ docker-compose run --rm rails-cucumber 
 
 // OR
 
-// For starting Rails application in development environment on http://localhost:3000
+// For starting the Rails application in development environment on http://localhost:3000
 $ docker-compose up rails-rottenpotatoes
 ```
 
