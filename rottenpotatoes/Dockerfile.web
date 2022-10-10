@@ -10,8 +10,6 @@ RUN gem install bundler:2.0.0.pre.3 && bundle install
 
 COPY ./ ./
 
-RUN rake db:migrate RAILS_ENV=development
-
 EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]

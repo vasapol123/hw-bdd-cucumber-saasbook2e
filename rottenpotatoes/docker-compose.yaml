@@ -3,16 +3,16 @@ version: '3.8'
 services:
   rails-cucumber:
     build:
-      context: ${ABSOLUTE_PROJECT_PATH}
+      context: ./
       dockerfile: Dockerfile.test
     container_name: rails-cucumber-testing
     stdin_open: true
     tty: true
     volumes:
-      - '${ABSOLUTE_PROJECT_PATH}:/usr/src/myapp'
+      - './:/usr/src/myapp'
   rails-rottenpotatoes:
     build:
-      context: ${ABSOLUTE_PROJECT_PATH}
+      context: ./
       dockerfile: Dockerfile.web
     container_name: rails-rottenpotatoes-web
     ports:
