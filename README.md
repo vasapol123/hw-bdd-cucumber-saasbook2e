@@ -1,9 +1,11 @@
 **Important:** If you want to run Cucumber tests, you could use the following commands respectively:
+Note: You should execute the third command for the first time you run `docker-compose build`
 
 ```
 $ cd ./rottenpotatoes/
 $ docker-compose build
-$ bash execute_container.sh
+$ docker-compose run --rm rails-cucumber rake db:migrate RAILS_ENV=test
+$ docker-compose run --rm rails-cucumber bash
 ```
 
 BDD and Cucumber
