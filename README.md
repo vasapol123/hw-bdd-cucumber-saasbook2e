@@ -10,7 +10,7 @@ $ docker-compose run --rm rails-cucumber
 // OR
 
 // For starting Rails application in development environment on http://localhost:3000
-$ docker 
+$ docker-compose up rails-rottenpotatoes
 ```
 
 BDD and Cucumber
