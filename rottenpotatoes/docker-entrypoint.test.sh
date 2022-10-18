@@ -8,6 +8,4 @@ if [[ ! -e "$FILE" ]]; then
   rake db:migrate RAILS_ENV=test
 fi
 
-bundle exec cucumber
-
 exec "$@"
