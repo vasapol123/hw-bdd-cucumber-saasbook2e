@@ -9,8 +9,9 @@
 
     %body
       %div.container
-        %div.navbar.navbar-expand-lg.bg-primary.text-white
+        %div.navbar.navbar-expand-lg.bg-primary.text-white.flex.justify-content-between
           %h1.title Rotten Potatoes!
+          = link_to 'Login', new_moviegoer_session_path, {:style=>'color:#FFFFFF'}
         #main
           - if flash[:notice]
             %div.alert.alert-danger

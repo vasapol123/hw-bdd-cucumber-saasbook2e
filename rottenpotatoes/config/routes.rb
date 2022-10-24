@@ -1,4 +1,9 @@
 Rottenpotatoes::Application.routes.draw do
+  devise_for :moviegoers, controllers: {
+    omniauth_callbacks: 'moviegoers/omniauth_callbacks',
+    sessions: 'moviegoers/sessions',
+    registrations: 'moviegoers/registrations'
+  }
   resources :movies
 
   post '/movies/add' => 'movies#add', :as => 'add'

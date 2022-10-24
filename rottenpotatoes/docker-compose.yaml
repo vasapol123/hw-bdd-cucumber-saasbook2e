@@ -15,5 +15,7 @@ services:
       context: ./
       dockerfile: Dockerfile.web
     container_name: rails-rottenpotatoes-web
+    volumes:
+      - './:/usr/src/myapp'
     ports:
       - 3000:3000
