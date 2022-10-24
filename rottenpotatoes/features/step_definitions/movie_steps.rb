@@ -39,7 +39,8 @@ end
 #  "When I uncheck the following ratings: PG, G, R"
 #  "When I check the following ratings: G"
 
-When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
+When /I (un)?check the following ratings: (.*)/ do 
+  |uncheck, rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
@@ -55,7 +56,7 @@ end
 
 # Make it easier to express ensuring several movies are or are not visible at once
 
-Then /I should (not )?see the following movies: (.*)/ do |not_, movies|
+Then /I should (not )?see the following movies:/ do |not_, movies|
   movies.split /,\s*/ do |movie|
     step %(I should #{not_}see "#{movie}")
   end
