@@ -12,6 +12,7 @@
         %div.navbar.navbar-expand-lg.bg-primary.text-white.flex.justify-content-between
           %h1.title Rotten Potatoes!
           = link_to 'Login', new_moviegoer_session_path, {:style=>'color:#FFFFFF'}
+          = button_to "Logout", destroy_moviegoer_session_path, data: {turbo: "false"}, method: :delete
         #main
           - if flash[:notice]
             %div.alert.alert-danger
