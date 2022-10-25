@@ -19,3 +19,8 @@ services:
       - './:/usr/src/myapp'
     ports:
       - 3000:3000
+  rails-rottenpotatoes-production:
+    image: rottenpotatoes.azurecr.io/rails-rottenpotatoes:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile.prod

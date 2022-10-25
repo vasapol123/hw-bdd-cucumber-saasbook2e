@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-FILE=./db/development.sqlite3
+FILE=./db/production.sqlite3
 
 if [[ ! -e "$FILE" ]]; then
   # "Migrate"
-  rake db:migrate RAILS_ENV=development
+  rake db:migrate RAILS_ENV=production
 fi
 
 exec "$@"
