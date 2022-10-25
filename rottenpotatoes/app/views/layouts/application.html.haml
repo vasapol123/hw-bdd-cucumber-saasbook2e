@@ -9,8 +9,14 @@
 
     %body
       %div.container
-        %div.navbar.navbar-expand-lg.bg-primary.text-white
+        %div.navbar.navbar-expand-lg.bg-primary.text-white.flex.justify-content-between
           %h1.title Rotten Potatoes!
+          - if current_moviegoer
+            %td Current User: #{current_moviegoer.full_name}
+            = image_tag(current_moviegoer.avatar_url)
+            = button_to 'Logout', destroy_moviegoer_session_path, data: {turbo: "false"}, method: :delete
+          - else
+            = button_to 'Login', new_moviegoer_session_path
         #main
           - if flash[:notice]
             %div.alert.alert-danger
