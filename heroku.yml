@@ -1,6 +1,6 @@
 build:
   docker:
-    web: Dockerfile.prod
+    web: rottenpotatoes/Dockerfile.prod
   config:
     RAILS_ENV: production
 run:
