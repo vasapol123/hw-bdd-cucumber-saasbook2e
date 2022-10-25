@@ -12,6 +12,8 @@ COPY ./ ./
 
 EXPOSE 3000
 
+USER root
+
 ENTRYPOINT [ "./docker-entrypoint.prod.sh" ]
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
