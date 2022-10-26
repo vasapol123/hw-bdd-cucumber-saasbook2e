@@ -1,26 +1,26 @@
 version: '3.8'
 
 services:
-  rails-cucumber:
+  cucumber:
     build:
-      context: ./
+      context: ./Dockerfiles
       dockerfile: Dockerfile.test
-    container_name: rails-cucumber-testing
+    container_name: test
     stdin_open: true
     tty: true
     volumes:
       - './:/usr/src/myapp'
-  rails-rottenpotatoes:
+  development:
     build:
-      context: ./
+      context: ./Dockerfiles
       dockerfile: Dockerfile.web
-    container_name: rails-rottenpotatoes-web
+    container_name: development
     volumes:
       - './:/usr/src/myapp'
     ports:
       - 3000:3000
-  rails-rottenpotatoes-production:
+  production:
     image: rottenpotatoes.azurecr.io/rails-rottenpotatoes:latest
     build:
-      context: ./
+      context: ./Dockerfiles
       dockerfile: Dockerfile.prod

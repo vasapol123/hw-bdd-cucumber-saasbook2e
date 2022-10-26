@@ -1,3 +1,7 @@
+.bundle
+db/*.sqlite3
+vendor/bundle
+tmp
 .env
 log/
 capybara-tmp
