@@ -2,25 +2,38 @@ version: '3.8'
 
 services:
   cucumber:
-    build:
-      context: ./Dockerfiles
-      dockerfile: Dockerfile.test
     container_name: test
+
+    # Build Docker Image inside the Dockerfiles folder
+    build:
+      context: ./
+      dockerfile: ./Dockerfiles/Dockerfile.test
+
+    # Ensure we can see the output during run
     stdin_open: true
     tty: true
+
+    # Mount the current folder
     volumes:
       - './:/usr/src/myapp'
+
   development:
     build:
-      context: ./Dockerfiles
-      dockerfile: Dockerfile.web
+      context: ./
+      dockerfile: ./Dockerfiles/Dockerfile.web
     container_name: development
     volumes:
       - './:/usr/src/myapp'
     ports:
       - 3000:3000
+
   production:
-    image: rottenpotatoes.azurecr.io/rails-rottenpotatoes:latest
+    image: railscontainerregistry.azurecr.io/rottenpotatoes-production:latest
+    environment:
+      - RAILS_ENV=production
     build:
-      context: ./Dockerfiles
-      dockerfile: Dockerfile.prod
+      context: ./
+      dockerfile: ./Dockerfiles/Dockerfile.prod
+    container_name: production
+    ports:
+      - 8080:8080

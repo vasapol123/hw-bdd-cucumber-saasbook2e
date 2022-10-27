@@ -4,11 +4,11 @@ RUN apt-get update -qq && apt-get -y install build-essential nodejs sqlite3 libs
 
 WORKDIR /usr/src/myapp
 
-COPY Gemfile* ./
+COPY ../Gemfile /usr/src/myapp/Gemfile
 
 RUN gem install bundler:2.0.0.pre.3 && bundle install
 
-COPY ./ ./
+COPY ../ ./
 
 EXPOSE 3000
 

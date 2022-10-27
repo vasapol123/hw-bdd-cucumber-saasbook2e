@@ -1,17 +1,17 @@
 FROM ruby:2.6.6-slim
 
-RUN apt-get update -qq && apt-get -y install build-essential nodejs libpq-dev sqlite3 libsqlite3-dev
+RUN apt-get update -qq && apt-get -y install build-essential nodejs sqlite3 libsqlite3-dev
 
 WORKDIR /usr/src/myapp
 
-COPY Gemfile* ./
+COPY ../Gemfile /usr/src/myapp/Gemfile
 
 RUN gem install bundler:2.0.0.pre.3 && bundle install
 
-COPY ./ ./
+COPY ../ ./
 
-EXPOSE 3000
+EXPOSE 8080
 
 ENTRYPOINT [ "./docker-entrypoint/docker-entrypoint.prod.sh" ]
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "8080"]

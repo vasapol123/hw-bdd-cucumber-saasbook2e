@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'protected_attributes'
 
+gem 'themoviedb'
+
 group :development, :test do
   gem 'test-unit'
   gem 'sqlite3','~> 1.3.11'
@@ -23,12 +25,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
-  gem 'themoviedb'
   gem 'dotenv-rails'
-end
-
-group :production do
-  gem 'pg'
 end
 
 gem 'devise'
