@@ -1,16 +1,16 @@
 **Important:** You could use the following commands respectively in different environments:
 
 
-```
+```zsh
 $ cd ./rottenpotatoes/
 
-// For using Cucumber to run the features in test environment
+# For using Cucumber to run the features in test environment
 $ docker-compose run --rm cucumber 
 
-// For starting the Rails web application in development environment on http://localhost:3000
+#/ For starting the Rails web application in development environment on http://localhost:3000
 $ docker-compose up development
 
-// For building Docker Image to deploy to production on a container registry
+# For building Docker Image to deploy to production on a container registry
 $ docker-compose up production
 ```
 
