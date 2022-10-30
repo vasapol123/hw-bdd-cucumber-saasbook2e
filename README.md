@@ -1,6 +1,5 @@
 **Important:** You could use the following commands respectively in different environments:
 
-
 ```zsh
 $ cd ./rottenpotatoes/
 
