@@ -1,5 +1,7 @@
-rottenpotatoes/.bundle/
-rottenpotatoes/db/*.sqlite3
-rottenpotatoes/log/
-rottenpotatoes/tmp/
-rottenpotatoes/vendor/bundle
+.bundle
+db/*.sqlite3
+vendor/bundle
+tmp
+.env
+log/
+capybara-tmp

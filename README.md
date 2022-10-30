@@ -1,16 +1,17 @@
-**Important:** You could use the following commands respectively to test the application or start the application on your browser:
+**Important:** You could use the following commands respectively in different environments:
 
 
-```
+```zsh
 $ cd ./rottenpotatoes/
 
-// For using Cucumber to run the features in test environment
-$ docker-compose run --rm rails-cucumber 
+# For using Cucumber to run the features in test environment
+$ docker-compose run --rm cucumber 
 
-// OR
+#/ For starting the Rails web application in development environment on http://localhost:3000
+$ docker-compose up development
 
-// For starting the Rails application in development environment on http://localhost:3000
-$ docker-compose up rails-rottenpotatoes
+# For building Docker Image to deploy to production on a container registry
+$ docker-compose up production
 ```
 
 BDD and Cucumber

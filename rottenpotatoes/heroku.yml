@@ -1,7 +1,0 @@
-build:
-  docker:
-    web: Dockerfile.prod
-  config:
-    RAILS_ENV: production
-run:
-  web: bundle exec rails server --host 0.0.0.0 -p $PORT

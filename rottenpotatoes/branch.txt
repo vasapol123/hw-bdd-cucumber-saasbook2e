@@ -1,9 +1,0 @@
-On branch sso!
-<<<<<<< Updated upstream
-Pee hi
-Hi From Mork
-Hi from Poon
-Hi from Fair
-=======
-Hello by poon!
->>>>>>> Stashed changes
